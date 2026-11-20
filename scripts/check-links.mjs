@@ -26,10 +26,27 @@ for (const file of htmlFiles) {
   }
 }
 
+async function check(href) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      return await fetch(base + href, { redirect: "manual" });
+    } catch (error) {
+      lastError = error;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 400));
+    }
+  }
+  throw lastError;
+}
+
 const results = [];
 for (const [href, source] of internal) {
-  const response = await fetch(base + href, { redirect: "manual" });
-  if (response.status !== 200) results.push({ status: response.status, href, source });
+  try {
+    const response = await check(href);
+    if (response.status !== 200) results.push({ status: response.status, href, source });
+  } catch (error) {
+    results.push({ status: "error", error: error.message, href, source });
+  }
 }
 
 console.log(

@@ -25,6 +25,7 @@ The site is served at `http://localhost:8080`.
 npm run build   # production build to _site/
 npm run brand   # regenerate hero, OG, avatar, and favicon assets
 npm run audit   # axe-core and responsive checks (requires `npx playwright install chromium`)
+npm run links   # verify internal links against the built site or BASE_URL
 ```
 
 ## Structure
@@ -52,9 +53,11 @@ scripts/                 brand asset generation and QA
 
 ## Deployment
 
+Live at [axs-official.github.io](https://axs-official.github.io).
+
 The workflow in `.github/workflows/pages.yml` builds on every push to `main` and
-deploys `_site` to GitHub Pages. In the repository settings, set **Pages → Source**
-to **GitHub Actions**.
+deploys `_site` to GitHub Pages. In the repository settings, **Pages → Source** is
+set to **GitHub Actions**.
 
 ## License
 
