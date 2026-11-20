@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: Plate not found
+description: "This page does not exist in the A-XS archive."
+permalink: /404.html
+noindex: true
+---
+
+<section class="notfound">
+  <div class="shell notfound__grid">
+    <div>
+      <span class="eyebrow">Error / 404</span>
+      <p class="notfound__code" aria-hidden="true">404</p>
+      <h1>This plate is not in the archive.</h1>
+      <p>
+        The page may have moved, been withheld, or never existed. The index is still
+        where it should be.
+      </p>
+      <div class="notfound__actions">
+        <a class="button button--accent" href="/">Return to the studio <span aria-hidden="true">↗</span></a>
+        <a class="button" href="/archive/">The archive <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="notfound__seal">
+      {% inlineSvg "assets/img/seal.svg" %}
+    </div>
+  </div>
+</section>

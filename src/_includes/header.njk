@@ -1,0 +1,72 @@
+<header class="site-head" data-site-head>
+  <div class="site-head__inner shell">
+    <a class="brand" href="/">
+      {% inlineSvg "assets/img/seal.svg", "brand__seal" %}
+      <span class="brand__word" aria-hidden="true">A<span class="brand__dash"></span>XS</span>
+      <span class="sr-only">A-XS — home</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {% for item in site.nav %}
+        <a href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="site-tools">
+      <span class="site-clock" data-clock>
+        <span class="site-clock__place">{{ site.location }}</span>
+        <span class="site-clock__time" data-clock-time>--:--</span>
+      </span>
+      <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to paper mode" aria-pressed="false">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2" />
+          <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.4 14.1A8.5 8.5 0 0 1 9.9 3.6a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+          <path d="M17 4.5v3M15.5 6h3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+        </svg>
+      </button>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Open menu</span>
+        <span class="menu-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-rule" data-scroll-rule aria-hidden="true"></div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-mobile-menu inert aria-hidden="true">
+  <div class="mobile-menu__head shell">
+    <span class="mono-label">Index / A-XS</span>
+    <button class="mobile-menu__close" type="button" data-menu-close>
+      <span class="sr-only">Close menu</span>
+      <span aria-hidden="true">Close ×</span>
+    </button>
+  </div>
+  <nav class="mobile-menu__nav shell" aria-label="Mobile">
+    {% for item in site.nav %}
+      <a href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>
+        <span class="mobile-menu__num">0{{ loop.index }}</span>
+        <span class="mobile-menu__label">{{ item.label }}</span>
+      </a>
+    {% endfor %}
+  </nav>
+  <div class="mobile-menu__foot shell">
+    <div>
+      <span class="mono-label">Elsewhere</span>
+      <div class="mobile-menu__socials">
+        {% for social in site.socials %}
+          <a href="{{ social.href }}" rel="{{ social.rel }} noopener" target="_blank">{{ social.label }} ↗</a>
+        {% endfor %}
+        {% if site.linkedin %}
+          <a href="{{ site.linkedin }}" rel="me noopener" target="_blank">LinkedIn ↗</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="mobile-menu__coords">
+      <span class="mono-label">Coordinates</span>
+      <span>{{ site.coordinates }}</span>
+    </div>
+  </div>
+</div>

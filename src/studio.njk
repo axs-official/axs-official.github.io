@@ -1,0 +1,180 @@
+---
+layout: base.njk
+title: The studio
+description: "A-XS is an independent systems studio based in Algeria, working across language design, native software, and interfaces. The work is private until it is ready."
+permalink: /studio/
+---
+
+<section class="page-hero">
+  <div class="shell">
+    <div class="page-hero__meta">
+      <span>Plate / III</span>
+      <span>Studio</span>
+      <span>Edition / {{ site.year }}</span>
+    </div>
+    <div class="page-hero__grid">
+      <div>
+        <span class="eyebrow">The studio</span>
+        <h1>A practice, <em>not a persona.</em></h1>
+      </div>
+      <aside class="page-hero__aside">
+        <div><strong>Based</strong>{{ site.location }}</div>
+        <div><strong>Mode</strong>Independent</div>
+        <div><strong>Status</strong>Private archive</div>
+      </aside>
+    </div>
+    <p class="page-hero__lede">
+      A-XS is an independent systems studio working across language design, native
+      software, and interfaces. The work is intentionally quiet until it is ready.
+    </p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">I / The name</span>
+      <h2>The line a system turns on.</h2>
+    </aside>
+    <div class="split__body" data-reveal>
+      <p>
+        A-XS is a contraction of <em>axis</em>: the line a system turns on. The hyphen
+        is that line. It is a useful constraint for a studio — every project should have
+        an axis, a central decision that everything else is measured against.
+      </p>
+      <p>
+        The mark is a compass rose reduced to its essentials: a ring, a cross, a diamond,
+        four copper nodes. It is drawn, not decorated. The same logic applies to the
+        software.
+      </p>
+      <blockquote>
+        “The work should hold under inspection.”
+        <cite>A-XS / studio note</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">II / Why private</span>
+      <h2>The archive is closed because the work is not finished.</h2>
+    </aside>
+    <div class="split__body" data-reveal>
+      <p>
+        Unfinished work should not be presented as a product. Screenshots, download
+        counts, and launch pages are easy to manufacture; a system that holds under
+        inspection is not. The current body of work is in development and stays private
+        until it meets that bar.
+      </p>
+      <p>
+        This is not mystique. It is a standard. When a project is ready, it will be
+        documented here with its architecture, measurements, and limits. Until then,
+        private dossiers are available on request for serious conversations.
+      </p>
+      <div class="access-panel__actions">
+        <a class="button button--accent" href="/archive/">About the archive <span aria-hidden="true">↗</span></a>
+        <a class="button" href="/contact/">Request a dossier <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">III / The record</span>
+      <h2>The studio, on one plate.</h2>
+    </aside>
+    <div class="split__body">
+      <dl class="ledger">
+        <div class="ledger__row">
+          <dt>Studio</dt>
+          <dd>A-XS — independent systems studio</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Based</dt>
+          <dd>{{ site.location }} · {{ site.coordinates }}</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Practice</dt>
+          <dd>Language design · native systems · interfaces</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Method</dt>
+          <dd>Measure the claim. Publish the limit.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Archive</dt>
+          <dd>Private · dossiers by request</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Correspondence</dt>
+          <dd><a href="{{ site.github }}" rel="me noopener" target="_blank">GitHub / {{ site.githubHandle }} ↗</a></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell">
+    <header class="section__head">
+      <span class="section__index">IV</span>
+      <h2 class="section__title">Currently</h2>
+      <p class="section__note">
+        No public release date is promised. When there is something to show, it will
+        appear here.
+      </p>
+    </header>
+
+    <div class="principles">
+      <article class="principle" data-reveal>
+        <span class="principle__num">Now</span>
+        <h3>Language &amp; runtime work.</h3>
+        <p>
+          Design and implementation in private. The public dossier will include the
+          architecture, the measured results, and the limits.
+        </p>
+      </article>
+      <article class="principle" data-reveal>
+        <span class="principle__num">Now</span>
+        <h3>Native systems work.</h3>
+        <p>
+          Small, direct Windows software. No installer ceremony, no unnecessary runtime,
+          no hidden service.
+        </p>
+      </article>
+      <article class="principle" data-reveal>
+        <span class="principle__num">Next</span>
+        <h3>Public dossiers.</h3>
+        <p>
+          Case studies will be published as projects finish. The archive page will carry
+          the index, not a teaser campaign.
+        </p>
+      </article>
+      <article class="principle" data-reveal>
+        <span class="principle__num">Always</span>
+        <h3>Correspondence.</h3>
+        <p>
+          For private dossiers, collaborations, or a closer look at the method, use the
+          contact page. Replies are considered, not automated.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="shell">
+    <span class="eyebrow">V / Correspondence</span>
+    <h2>If the problem has <em>a hard edge.</em></h2>
+    <div class="contact-band__links">
+      <a href="/contact/">Contact the studio <span aria-hidden="true">↗</span></a>
+      {% for social in site.socials %}
+        <a href="{{ social.href }}" rel="{{ social.rel }} noopener" target="_blank">{{ social.label }} <span aria-hidden="true">↗</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

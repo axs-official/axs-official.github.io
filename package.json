@@ -1,0 +1,22 @@
+{
+  "name": "axs-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A-XS — Independent systems studio. Source for axs-official.github.io.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "node -e \"require('node:fs').rmSync('_site',{recursive:true,force:true})\"",
+    "brand": "node scripts/build-brand.mjs",
+    "shots": "node scripts/shoot.mjs",
+    "audit": "node scripts/audit.mjs",
+    "links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "axe-core": "^4.14.1",
+    "fontkit": "^3.0.0",
+    "playwright": "^1.65.1",
+    "sharp": "^0.35.5"
+  }
+}

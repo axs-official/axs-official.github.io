@@ -1,0 +1,151 @@
+---
+layout: base.njk
+title: Colophon
+description: "How the A-XS studio site is made: type, color, grid, build, accessibility, and source."
+permalink: /colophon/
+---
+
+<section class="page-hero">
+  <div class="shell">
+    <div class="page-hero__meta">
+      <span>Plate / VI</span>
+      <span>Colophon</span>
+      <span>Edition / {{ site.year }}</span>
+    </div>
+    <div class="page-hero__grid">
+      <div>
+        <span class="eyebrow">The making of</span>
+        <h1>Colophon.</h1>
+      </div>
+      <aside class="page-hero__aside">
+        <div><strong>Type</strong>Bodoni Moda · Newsreader · IBM Plex Mono</div>
+        <div><strong>Palette</strong>Ink · copper · bone</div>
+        <div><strong>Build</strong>Eleventy · static HTML</div>
+      </aside>
+    </div>
+    <p class="page-hero__lede">
+      A small site, made deliberately. No trackers, no cookies, no external requests at
+      runtime, and no framework on the client.
+    </p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">I / Design</span>
+      <h2>One line, held.</h2>
+    </aside>
+    <div class="split__body" data-reveal>
+      <p>
+        The visual system is an editorial grid with an engraved surface: hairlines,
+        plate numbers, registration marks, and a single copper line. The structure is
+        brutalist; the surface is neoclassical. Neither is allowed to become decoration.
+      </p>
+      <p>
+        All diagrams are drawn as SVG. There are no stock photographs and no generated
+        imagery. The armillary and the seal are constructed from circles, axes, and
+        ticks — the same geometry that gives the site its name.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">II / Type</span>
+      <h2>Three voices.</h2>
+    </aside>
+    <div class="split__body">
+      <dl class="ledger">
+        <div class="ledger__row">
+          <dt>Display</dt>
+          <dd>Bodoni Moda — high-contrast serif for the name, headlines, and plates.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Text</dt>
+          <dd>Newsreader — a quieter serif for running copy and long-form notes.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Technical</dt>
+          <dd>IBM Plex Mono — labels, coordinates, metadata, and the margin.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>License</dt>
+          <dd>All three are open-source typefaces, self-hosted as WOFF2.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">III / Build</span>
+      <h2>Static by default.</h2>
+    </aside>
+    <div class="split__body">
+      <dl class="ledger">
+        <div class="ledger__row">
+          <dt>Generator</dt>
+          <dd>Eleventy 3, Nunjucks templates, hand-written CSS.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Scripts</dt>
+          <dd>Vanilla JavaScript for the theme, menu, clock, and scroll line.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Hosting</dt>
+          <dd>GitHub Pages, built and deployed by GitHub Actions.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Privacy</dt>
+          <dd>No analytics, no cookies, no third-party scripts, no fonts from a CDN.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Source</dt>
+          <dd><a href="{{ site.repo }}" rel="noopener" target="_blank">github.com/axs-official/axs-official.github.io ↗</a></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell split">
+    <aside class="split__aside">
+      <span class="eyebrow">IV / Access</span>
+      <h2>Built to be read.</h2>
+    </aside>
+    <div class="split__body">
+      <dl class="ledger">
+        <div class="ledger__row">
+          <dt>Semantics</dt>
+          <dd>Landmarks, heading order, skip link, and visible focus states.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Motion</dt>
+          <dd>Reduced-motion support; the armillary stops when asked.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Themes</dt>
+          <dd>Ink and Paper, both designed; the choice is stored locally.</dd>
+        </div>
+        <div class="ledger__row">
+          <dt>Print</dt>
+          <dd>A print stylesheet strips the interface and keeps the text.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="shell">
+    <p class="mono-label">
+      © {{ site.year }} A-XS · Set in Bodoni Moda, Newsreader &amp; IBM Plex Mono · Built in {{ site.location }}
+    </p>
+  </div>
+</section>
