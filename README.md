@@ -1,65 +1,48 @@
-# A-XS — axs-official.github.io
+# A-XS — Independent Systems Studio
 
-Source for the A-XS studio site: an independent systems studio working across
-language design, native software, and interfaces. The public archive is held
-privately; the site is the studio dossier.
+Source for **axs-official.github.io**.
+
+A-XS is an early-career developer building automation, AI-assisted tools, and interfaces — learning in public from Algeria.
+
+> The public archive is held privately. The site is the studio dossier.
 
 ## Stack
 
-- [Eleventy 3](https://www.11ty.dev/) with Nunjucks templates
-- Hand-written CSS; self-hosted WOFF2 typefaces (Bodoni Moda, Newsreader, IBM Plex Mono)
-- Minimal vanilla JavaScript for theme, menu, clock, and scroll progress
-- No analytics, cookies, third-party scripts, or runtime CDN requests
-- Deployed to GitHub Pages with GitHub Actions
+- [Next.js 16](https://nextjs.org/) · [React 19](https://react.dev/) · [TypeScript](https://www.typescriptlang.org/)
+- [Framer Motion](https://www.framermotion.com/) — page and card animations
+- [Three.js + @react-three/fiber + @react-three/drei](https://threejs.org/) — animated 3D sphere, orbital rings
+- [Tailwind CSS](https://tailwindcss.com/) + [Manrope](https://rsms.me/manrope/) (self-hosted)
+- GitHub Pages with a zero-dependency GitHub Actions build
+
+No analytics, no cookies, no third-party scripts, no runtime CDN requests.
 
 ## Local development
 
 ```sh
 npm install
-npm run serve
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run start      # preview production build
 ```
 
-The site is served at `http://localhost:8080`.
+## Pages
 
-```sh
-npm run build   # production build to _site/
-npm run brand   # regenerate hero, OG, avatar, and favicon assets
-npm run audit   # axe-core and responsive checks (requires `npx playwright install chromium`)
-npm run links   # verify internal links against the built site or BASE_URL
-```
-
-## Structure
-
-```
-src/
-  _data/site.js          brand, navigation, and contact data
-  _includes/             base, header, footer
-  assets/                CSS, JS, fonts, SVG plates
-  *.njk                  page templates
-  static/                passthrough files (manifest, .nojekyll)
-.github/workflows/       Pages deployment
-scripts/                 brand asset generation and QA
-```
-
-## Editorial rules
-
-- **A-XS only.** No legal name, personal email, or personal social accounts.
-- **No public project names, screenshots, or private repository links.** The archive
-  is represented as a private dossier, not as a project gallery.
-- **No claims without a method.** Keep measurements and limits explicit when a
-  project is eventually published.
-- **LinkedIn is optional.** Set `linkedin` and `linkedinHandle` in `src/_data/site.js`
-  to enable the conditional links; nothing is displayed while the value is empty.
+- **Home** — animated hero with a 3D sphere and orbital rings
+- **About** — stats and details, card-driven
+- **Work** — selected projects (private archive, shown as a dossier)
+- **Stack** — tools across languages, frontend, infra, and AI
+- **Contact** — reach out, open to build
 
 ## Deployment
 
-Live at [axs-official.github.io](https://axs-official.github.io).
+A GitHub Actions workflow in `.github/workflows/pages.yml` builds on every push to `main` and deploys `_site` to GitHub Pages.
 
-The workflow in `.github/workflows/pages.yml` builds on every push to `main` and
-deploys `_site` to GitHub Pages. In the repository settings, **Pages → Source** is
-set to **GitHub Actions**.
+```sh
+npm run build
+```
 
 ## License
 
-Site content, design, and brand assets © A-XS. All rights reserved. Typefaces are
-used under their respective open-source licenses.
+Site content, design, and brand assets © A-XS. All rights reserved.
+
+Typefaces are used under their respective open-source licenses.

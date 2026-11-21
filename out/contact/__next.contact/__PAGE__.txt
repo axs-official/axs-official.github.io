@@ -1,0 +1,31 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/3kkkp51xq378k.js"
+3:I[27460,["$2"],"default"]
+4:I[26987,["$2"],"default"]
+b:"/_next/static/chunks/02wooxjgsz75p.js"
+c:"/_next/static/chunks/3ei5m0c8-2kv9.js"
+d:I[84834,["$2","$b","$c"],"Nav"]
+e:I[36729,["$2","$b","$c"],"ContactCard"]
+f:I[99338,["$2"],"OutletBoundary"]
+10:"$Sreact.suspense"
+13:"ViewportBoundary"
+14:I[99338,["$2"],"$13"]
+15:"MetadataBoundary"
+16:I[99338,["$2"],"$15"]
+17:I[96277,["$2"],"IconMark"]
+:HL["/_next/static/chunks/2jrjcadrsmajx.css","style"]
+6:X
+9:X
+9:C
+a:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[[["$","$Ld",null,{}],["$","main",null,{"className":"relative pt-24","children":["$","$Le",null,{}]}]],[["$","script","script-0",{"src":"/_next/static/chunks/02wooxjgsz75p.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/3ei5m0c8-2kv9.js","async":true}]],["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]]}],"p":"$@12","v":null,"s":"$6"}}]]
+7:[["children",{"s":"contact","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@8","v":"$9","s":"$6"},"c":"$Qa"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2jrjcadrsmajx.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3kkkp51xq378k.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}]}]]}],"p":"$@5","v":null,"s":"$6"},"c":"$Q7"},"h":{"r":["$","$1","h",{"children":[null,["$","$L14",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L16",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$10",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"A-XS — Developer & Automation Builder"}],["$","meta","1",{"name":"description","content":"A-XS is an early-career developer building automation, AI-assisted tools, and interfaces. Learning in public from Algeria."}],["$","meta","2",{"property":"og:title","content":"A-XS — Developer & Automation Builder"}],["$","meta","3",{"property":"og:description","content":"A-XS is an early-career developer building automation, AI-assisted tools, and interfaces. Learning in public from Algeria."}],["$","meta","4",{"property":"og:site_name","content":"A-XS"}],["$","meta","5",{"property":"og:locale","content":"en_US"}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"A-XS — Developer & Automation Builder"}],["$","meta","9",{"name":"twitter:description","content":"A-XS is an early-career developer building automation, AI-assisted tools, and interfaces. Learning in public from Algeria."}],["$","link","10",{"rel":"icon","href":"/assets/favicon.svg"}],["$","link","11",{"rel":"apple-touch-icon","href":"/assets/apple-touch-icon.png"}],["$","$L17","12",{}]]}]}],null]}],null]}],"p":"$@18","v":null,"s":"$6"}},"a":"$@19","u":"$@1a","b":"O7OEmeDAvStnbYZ3a1wsp"}
+11:null
+6:300
+1a:true
+6:C
+19:0
+8:"$undefined"
+5:"$undefined"
+18:"$undefined"
+12:"$undefined"
