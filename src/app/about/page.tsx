@@ -1,26 +1,49 @@
-import { Nav } from "@/components/Nav";
-import { AboutCards } from "@/components/AboutCards";
 import Link from "next/link";
+import { AboutCards } from "@/components/AboutCards";
+import { site } from "@/data/site";
 
-export const dynamic = 'force-static';
+export const metadata = {
+  title: "About",
+  description:
+    "axs is a privacy-focused developer in Algeria. I build tools and automations that don't collect data.",
+};
+
 export default function AboutPage() {
   return (
-    <>
-      <Nav />
-      <main className="relative pt-24">
-        <section className="mx-auto max-w-6xl px-5 pb-20 text-center sm:px-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#6AAED4]">about</p>
-          <h1 className="mt-3 text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight">
-            <span className="gradient-text">A-XS</span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base text-white/60">
-            Developer & automation builder from Algeria. I build software that
-            runs quietly in the background — pipelines, agents, interfaces, and
-            the glue that holds them together.
-          </p>
-        </section>
+    <div className="shell pb-24 pt-32">
+      <header className="max-w-2xl">
+        <p className="eyebrow">About</p>
+        <h1 className="mt-5 text-[clamp(2.2rem,6vw,3.6rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+          I&apos;m axs.
+        </h1>
+        <p className="lede mt-6">
+          A developer in Algeria. I build software for problems I&apos;ve run into myself, or that
+          frustrated me because the closed version was paid, locked down, or quietly collecting
+          data.
+        </p>
+        <p className="lede mt-4">
+          {site.mission} Privacy, security and quality are the parts I don&apos;t trade away: no
+          analytics, no cookies, no trackers, no accounts you didn&apos;t ask for. Next stretch is
+          data analysis, where the same rules apply.
+        </p>
+        <p className="lede mt-4">
+          I write code, not claims. There are no client logos or invented numbers on this site —
+          only figures pulled from my own GitHub activity, and I&apos;ll show where they came from
+          if you ask.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/work" className="btn btn--solid">
+            See the work
+          </Link>
+          <Link href="/contact" className="btn">
+            Paid work
+          </Link>
+        </div>
+      </header>
+
+      <div className="mt-16">
         <AboutCards />
-      </main>
-    </>
+      </div>
+    </div>
   );
 }

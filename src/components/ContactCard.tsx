@@ -1,48 +1,78 @@
-'use client';
-import { FaGithub, FaEnvelope, FaLink, FaPaperclip } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { ContactForm } from "./ContactForm";
+import { EmailLink } from "./EmailLink";
+import { site } from "@/data/site";
 
-const items = [
-  { label: "GitHub", icon: <FaGithub className="h-4 w-4" />, value: "@axs-official", href: "https://github.com/axs-official", external: true },
-  { label: "Email", icon: <FaEnvelope className="h-4 w-4" />, value: "axs.official@gmail.com", href: "mailto:axs.official@gmail.com" },
-  { label: "Location", icon: <FaLink className="h-4 w-4" />, value: "Algeria", href: undefined },
-  { label: "Tags", icon: <FaLink className="h-4 w-4" />, value: "automation · AI · interfaces", href: undefined },
+const help = [
+  "Automation scripts and internal tools",
+  "A site or a dashboard that isn't a template",
+  "Cleaning up or fixing an existing front end",
+  "AI-assisted workflows, local or over an API",
 ];
 
 export function ContactCard() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-6">
-      <div className="card p-6 sm:p-8">
-        <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
-          <div className="flex gap-2">
-            {items.map((i) => (
-              <a
-                key={i.label}
-                href={i.href || i.value}
-                target={i.external ? "_blank" : undefined}
-                rel={i.external ? "noreferrer" : undefined}
-                className="flex flex-col items-center gap-1 rounded-xl border border-white/8 bg-white/4 px-4 py-3 text-white/60 transition hover:border-[#6AAED4]/30 hover:text-[#6AAED4]"
-              >
-                <span className="text-sm">{i.icon}</span>
-                <span className="text-xs font-medium">{i.value}</span>
-              </a>
-            ))}
-          </div>
-          <div className="pt-4 sm:pt-0 text-center sm:text-left">
-            <p className="text-sm text-white/45 uppercase tracking-[0.16em]">availability</p>
-            <p className="text-lg font-medium text-white">Open to build</p>
-            <p className="mt-1 text-sm text-white/55">
-              I'm taking select build contracts and freelance projects.
+    <div className="space-y-14">
+      <div className="grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
+        <ContactForm />
+
+        <div className="flex flex-col gap-4">
+          <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-dim">
+            Or reach me directly
+          </p>
+          <div className="card card--accent p-5">
+            <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-dim">Email</p>
+            <EmailLink className="mt-3 block break-all text-[14px] font-medium tracking-[-0.01em] transition-colors hover:text-accent-soft" />
+            <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+              {site.emailNote}. Tell me the job, the deadline, and what&apos;s in the way.
             </p>
-            <a
-              href="mailto:axs.official@gmail.com?subject=Build%20inquiry"
-              className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#6AAED4]/30 bg-[#6AAED4]/10 px-4 py-2 text-sm text-[#6AAED4] transition hover:bg-[#6AAED4]/20"
-            >
-              <FaPaperclip className="h-3.5 w-3.5" /> Start a conversation
-            </a>
           </div>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noreferrer"
+            className="card card--accent block p-5"
+          >
+            <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-dim">GitHub</p>
+            <p className="mt-3 text-[14px] font-medium tracking-[-0.01em]">@axs-official</p>
+            <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+              Public repos, the profile cards, and the code for this site.
+            </p>
+          </a>
         </div>
       </div>
-    </section>
+
+      <div className="grid gap-8 lg:grid-cols-[0.6fr_1fr] lg:gap-16">
+        <div>
+          <p className="eyebrow">What I can help with</p>
+          <p className="mt-5 text-sm leading-relaxed text-muted">
+            I&apos;m one person, so I keep the scope tight: a clear job, done properly, with the
+            code handed over. No retainer, no lock-in, and nothing of yours leaves your machine.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-muted">
+            Not paid work? Open an issue on GitHub instead. I answer those in public, so the next
+            person with the same problem finds it.
+          </p>
+        </div>
+        <ul className="border-t border-[var(--line)]">
+          {help.map((item) => (
+            <li
+              key={item}
+              className="border-b border-[var(--line)] py-3.5 text-[14px] text-muted"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
+        {site.location} · {site.timezone} · {site.availability}
+      </p>
+      <p className="max-w-[64ch] text-[12.5px] leading-relaxed text-dim">
+        No analytics, no cookies, no trackers on this page. The address is written out so you can
+        copy it, and the mail link is assembled in the browser rather than sitting in the HTML for
+        scrapers.
+      </p>
+    </div>
   );
 }

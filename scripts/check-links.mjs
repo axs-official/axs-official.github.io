@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const siteDir = "_site";
-const base = process.env.BASE_URL || "http://localhost:8080";
+const siteDir = "out";
+const base = process.env.BASE_URL || "http://localhost:3000";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) =>

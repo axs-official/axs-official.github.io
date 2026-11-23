@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "A-XS",
-    "email": "axs.official@gmail.com",
+    "name": "axs",
+    "email": "axs.contact.me@gmail.com",
     "url": "https://github.com/axs-official"
   },
-  "description": "A-XS \u2014 independent systems studio. Source for axs-official.github.io.",
+  "description": "axs — privacy-first developer. Source for axs-official.github.io.",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -29,7 +29,7 @@
     "url": "https://github.com/axs-official/axs-official.github.io"
   },
   "bugs": {
-    "email": "axs.official@gmail.com"
+    "email": "axs.contact.me@gmail.com"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -47,6 +47,9 @@
     "three": "^0.187.0"
   },
   "devDependencies": {
+    "@fontsource/cedarville-cursive": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
     "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -55,6 +58,7 @@
     "eslint": "^10.15.0",
     "eslint-config-next": "16.4.6",
     "postcss": "^8",
+    "simple-icons": "^16.38.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^6"
   },

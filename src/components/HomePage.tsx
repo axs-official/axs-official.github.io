@@ -1,13 +1,21 @@
-import { Nav } from "./Nav";
 import { Hero } from "./Hero";
+import {
+  AboutSection,
+  ContactSection,
+  ProjectsSection,
+  SignalSection,
+  ToolchainSection,
+} from "./HomeSections";
 
 export function HomePage() {
   return (
     <>
-      <Nav />
-      <main className="relative">
-        <Hero />
-      </main>
+      <Hero />
+      <AboutSection />
+      <ToolchainSection />
+      <SignalSection />
+      <ProjectsSection />
+      <ContactSection />
     </>
   );
 }

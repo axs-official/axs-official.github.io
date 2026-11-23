@@ -1,53 +1,70 @@
-'use client';
-import { FaCodeBranch, FaRocket, FaServer, FaPuzzlePiece } from "react-icons/fa";
-import { motion } from "framer-motion";
-
-const cards = [
-  { name: "CLI Contracts", tag: "Automation · Rust", icon: <FaServer className="h-4 w-4" />, body: "Small CLIs that validate and generate project contracts, run in CI, fail fast." },
-  { name: "AI Pipelines", tag: "AI · Python", icon: <FaRocket className="h-4 w-4" />, body: "Event-driven pipelines that route prompts, tools, and results with retries and idempotency." },
-  { name: "Interface Kit", tag: "Web · TypeScript", icon: <FaPuzzlePiece className="h-4 w-4" />, body: "A design system of accessible components, dark-first, with motion tokens and a monochrome palette." },
-];
+import Link from "next/link";
+import { builds, site } from "@/data/site";
 
 export function WorkCards() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-6">
-      <div className="text-center">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#6AAED4]">work</p>
-        <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Selected work</h2>
-        <p className="mx-auto mt-2 max-w-lg text-white/55 text-sm">
-          A small sample of things I build — mostly behind closed doors, most of it
-          automation-first.
-        </p>
-      </div>
-
-      <div className="mt-9 grid gap-4 sm:grid-cols-2">
-        {cards.map((c, i) => (
-          <motion.div
-            key={c.name}
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
-            className="card flex gap-4"
+    <div className="border-t border-[var(--line)]">
+      {builds.map((build) => {
+        const body = (
+          <>
+            <div className="flex items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-dim">
+              <span>{build.number}</span>
+              <span className={build.status === "Live" ? "text-accent" : ""}>{build.status}</span>
+            </div>
+            <h2 className="mt-8 text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-[-0.03em]">
+              {build.title}
+            </h2>
+            <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-soft/80">
+              {build.tag}
+            </p>
+            <p className="mt-3 max-w-[62ch] text-[14px] leading-relaxed text-muted">{build.body}</p>
+            <p className="mt-6 text-[13px] text-accent-soft">
+              {build.href.startsWith("/") ? "Ask me about it →" : "Open on GitHub ↗"}
+            </p>
+          </>
+        );
+        return build.href.startsWith("/") ? (
+          <Link
+            key={build.title}
+            href={build.href}
+            className="group grid gap-6 border-b border-[var(--line)] py-10 transition-colors hover:bg-[rgba(255,255,255,0.02)] sm:grid-cols-[80px_1fr] sm:px-6"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/5 text-[#6AAED4]">
-              {c.icon}
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-white">{c.name}</h3>
-              <p className="text-[11px] text-white/45 uppercase tracking-[0.12em]">{c.tag}</p>
-              <p className="mt-1.5 text-sm text-white/60 leading-relaxed">{c.body}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+            {body}
+          </Link>
+        ) : (
+          <a
+            key={build.title}
+            href={build.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group grid gap-6 border-b border-[var(--line)] py-10 transition-colors hover:bg-[rgba(255,255,255,0.02)] sm:grid-cols-[80px_1fr] sm:px-6"
+          >
+            {body}
+          </a>
+        );
+      })}
 
-      <div className="mt-8 text-center">
-        <a href="https://github.com/axs-official?tab=repositories&q=&type=all&sort=stargazers" target="_blank" rel="noreferrer">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm text-white/80 transition hover:bg-white/10">
-            <FaCodeBranch className="h-4 w-4" /> View all repositories
-          </span>
-        </a>
+      <div className="grid gap-6 border-b border-[var(--line)] py-10 sm:grid-cols-[80px_1fr] sm:px-6">
+        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-dim">04</span>
+        <div>
+          <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-[-0.03em]">
+            The private ones
+          </h2>
+          <p className="mt-3 max-w-[62ch] text-[14px] leading-relaxed text-muted">
+            The rest of my work sits in private repos: automation scripts, private apps, unfinished
+            ideas. I don&apos;t publish a client list or numbers I can&apos;t back up. If you want to
+            see how I work, ask and I&apos;ll show you the code.
+          </p>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noreferrer"
+            className="link mt-5 text-[13px]"
+          >
+            github.com/axs-official ↗
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

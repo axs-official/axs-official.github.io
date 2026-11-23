@@ -1,62 +1,81 @@
-'use client';
-import { FaBriefcase, FaTag, FaLanguage, FaCameraRetro, FaMapMarkerAlt, FaClock, FaGithub } from "react-icons/fa";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { ContributionMap } from "./ContributionMap";
+import { focus, principles, site } from "@/data/site";
 
-const stats = [
-  { value: "150+", label: "Projects shipped", icon: <FaBriefcase className="h-4 w-4" /> },
-  { value: "36", label: "Modules & tools", icon: <FaTag className="h-4 w-4" /> },
-  { value: "8", label: "Languages", icon: <FaLanguage className="h-4 w-4" /> },
-  { value: "12+", label: "Interfaces", icon: <FaCameraRetro className="h-4 w-4" /> },
-];
-
-const details = [
-  { label: "Location", value: "Algeria", icon: <FaMapMarkerAlt className="h-4 w-4" /> },
-  { label: "Timezone", value: "Africa/Algiers (UTC+1)", icon: <FaClock className="h-4 w-4" /> },
-  { label: "Handles", value: `@axs-official`, icon: <FaGithub className="h-4 w-4" /> },
+const facts = [
+  { label: "Where", value: `${site.location} · ${site.timezone}` },
+  { label: "Languages", value: site.languages },
+  { label: "Doing", value: "Privacy-first tools" },
+  { label: "Status", value: site.availability },
 ];
 
 export function AboutCards() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-6">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((s, i) => (
-          <motion.div
-            key={s.label}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.06 }}
-            className="card text-center"
-          >
-            <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-[#6AAED4]">
-              {s.icon}
-            </div>
-            <p className="mt-3 text-2xl font-bold text-white">{s.value}</p>
-            <p className="mt-0.5 text-xs text-white/45 uppercase tracking-[0.16em]">{s.label}</p>
-          </motion.div>
+    <div className="space-y-14">
+      <div className="grid gap-px overflow-hidden border border-[var(--line)] sm:grid-cols-2 lg:grid-cols-4">
+        {facts.map((fact) => (
+          <div key={fact.label} className="bg-[rgba(255,255,255,0.02)] p-5">
+            <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-dim">{fact.label}</p>
+            <p className="mt-2 text-[14.5px]">{fact.value}</p>
+          </div>
         ))}
       </div>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {details.map((d, i) => (
-          <motion.div
-            key={d.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 + i * 0.06 }}
-            className="card"
-          >
-            <div className="flex items-start gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-[#6AAED4]">
-                {d.icon}
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">{d.label}</p>
-                <p className="text-sm text-white/85">{d.value}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+      <div>
+        <p className="eyebrow">What I do</p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {focus.map((item) => (
+            <article key={item.index} className="card card--accent p-5">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-dim">{item.index}</span>
+              <h3 className="mt-3 text-[16px] font-semibold">{item.title}</h3>
+              <p className="mt-2 text-[13.5px] leading-relaxed text-muted">{item.body}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <li key={tag} className="chip">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
-    </section>
+
+      <div className="grid gap-10 lg:grid-cols-[0.6fr_1fr] lg:gap-16">
+        <div>
+          <p className="eyebrow">How I work</p>
+          <p className="mt-5 text-sm leading-relaxed text-muted">
+            Three rules I don&apos;t bend. Everything I publish gets held to them, this site
+            included — it ships without analytics, cookies or third-party scripts.
+          </p>
+          <Link href="/contact" className="link mt-6 text-[13px]">
+            Talk about paid work <span aria-hidden>→</span>
+          </Link>
+        </div>
+        <ol className="space-y-px overflow-hidden border-y border-[var(--line)]">
+          {principles.map((item, index) => (
+            <li
+              key={item.title}
+              className="grid gap-1 border-b border-[var(--line)] py-5 last:border-b-0 sm:grid-cols-[42px_1fr]"
+            >
+              <span className="font-mono text-[10px] tracking-[0.16em] text-accent">
+                0{index + 1}
+              </span>
+              <div>
+                <p className="text-[15px] font-medium">{item.title}</p>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-muted">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div>
+        <p className="eyebrow">On GitHub</p>
+        <div className="mt-6">
+          <ContributionMap />
+        </div>
+      </div>
+    </div>
   );
 }
