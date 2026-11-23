@@ -66,8 +66,8 @@ export function LinksPage() {
       <div className="links-in flex flex-col items-center text-center">
         <div className="relative h-[84px] w-[84px]">
           <span className="absolute inset-0 rounded-full border border-[var(--line)]" />
-          <span className="absolute inset-[-7px] rounded-full border border-dashed border-[rgba(59,99,246,0.4)] [animation:links-spin_30s_linear_infinite]" />
-          <span className="absolute inset-0 grid place-items-center rounded-full bg-[radial-gradient(circle_at_32%_24%,#2a2a2a,#0d0d0d_72%)] shadow-[0_20px_50px_-20px_rgba(59,99,246,0.55)]">
+          <span className="absolute inset-[-7px] rounded-full border border-dashed border-[rgba(255,255,255,0.24)] [animation:links-spin_30s_linear_infinite]" />
+          <span className="absolute inset-0 grid place-items-center rounded-full bg-[radial-gradient(circle_at_32%_24%,#2a2a2a,#0d0d0d_72%)] shadow-[0_20px_50px_-20px_rgba(255,255,255,0.38)]">
             <span className="grad-text text-[24px] font-semibold tracking-[-0.04em]">axs</span>
           </span>
         </div>
@@ -78,7 +78,7 @@ export function LinksPage() {
           alone.
         </p>
         <p className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--live)] shadow-[0_0_9px_rgba(74,222,128,0.75)]" />
           {site.availability}
           <span className="text-[var(--line-strong)]">/</span>
           {site.timezone}

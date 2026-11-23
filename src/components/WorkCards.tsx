@@ -9,7 +9,7 @@ export function WorkCards() {
           <>
             <div className="flex items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-dim">
               <span>{build.number}</span>
-              <span className={build.status === "Live" ? "text-accent" : ""}>{build.status}</span>
+              <span className={build.status === "Live" ? "text-[var(--live)]" : ""}>{build.status}</span>
             </div>
             <h2 className="mt-8 text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-[-0.03em]">
               {build.title}

@@ -115,7 +115,7 @@ export function ProjectsSection() {
             <>
               <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-dim">
                 <span>{build.number}</span>
-                <span className={build.status === "Live" ? "text-accent" : "text-dim"}>
+                <span className={build.status === "Live" ? "text-[var(--live)]" : "text-dim"}>
                   {build.status}
                 </span>
               </div>

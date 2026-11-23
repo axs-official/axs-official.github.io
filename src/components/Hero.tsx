@@ -208,7 +208,7 @@ function Planet() {
       <group ref={ring} rotation={[Math.PI / 2.25, 0, 0]}>
         <mesh>
           <ringGeometry args={[1.98, 2.01, 128]} />
-          <meshBasicMaterial color="#3b63f6" transparent opacity={0.7} side={THREE.DoubleSide} />
+          <meshBasicMaterial color="#ffffff" transparent opacity={0.55} side={THREE.DoubleSide} />
         </mesh>
         <mesh rotation={[0.3, 0, 0.18]}>
           <ringGeometry args={[2.28, 2.3, 128]} />
@@ -233,7 +233,7 @@ function Scene() {
     <>
       <ambientLight intensity={0.35} />
       <pointLight position={[4, 5, 6]} intensity={34} color="#ffffff" />
-      <pointLight position={[-5, -2, 3]} intensity={15} color="#7d95ff" />
+      <pointLight position={[-5, -2, 3]} intensity={15} color="#d6d6d6" />
       <pointLight position={[0, -4, -5]} intensity={9} color="#8a8a8a" />
       <Stars radius={80} depth={55} count={2600} factor={4} saturation={0} fade speed={0.5} />
       <group scale={scale}>
@@ -311,7 +311,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-dim"
           >
             <span className="inline-flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--live)] shadow-[0_0_9px_rgba(74,222,128,0.75)]" />
               {site.availability}
             </span>
             <span>{site.location}</span>
