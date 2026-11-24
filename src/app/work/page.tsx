@@ -15,8 +15,8 @@ export default function WorkPage() {
           Things I&apos;ve built.
         </h1>
         <p className="lede mt-6">
-          Short list, on purpose. Two of these are public, the rest is still private. If you want to
-          see how I work, ask and I&apos;ll send you the code.
+          A short list, deliberately. Two projects are public; the rest is still private. If you
+          want to see how I work, ask and I&apos;ll send you the code.
         </p>
       </header>
 

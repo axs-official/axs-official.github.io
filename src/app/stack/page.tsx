@@ -15,8 +15,8 @@ export default function StackPage() {
           What I use.
         </h1>
         <p className="lede mt-6">
-          Not everything here is a strength. The levels are rough on purpose: what I reach for most
-          days, what I&apos;m comfortable in, and what I&apos;m still learning.
+          Not everything here is a strength, and the levels are honest: what I use most days, what
+          I&apos;m comfortable with, and what I&apos;m still learning.
         </p>
       </header>
 
@@ -25,8 +25,8 @@ export default function StackPage() {
       </div>
 
       <p className="mt-12 max-w-[60ch] text-[13.5px] leading-relaxed text-muted">
-        I pick tools by what the job needs, not by what&apos;s trending. If something is missing
-        from this list, I&apos;ll learn it — I&apos;ve done that for most of what&apos;s above.
+        I pick tools based on what the job needs, not what&apos;s trending. If something is missing
+        from this list, I&apos;ll learn it — that&apos;s how most of this list got here.
       </p>
     </div>
   );

@@ -15,13 +15,13 @@ export default function ContactPage() {
           For paid work.
         </h1>
         <p className="lede mt-6">
-          This address is for business enquiries: a job you need built, fixed, or automated. Tell me
+          I use this address for paid work: something you need built, fixed, or automated. Tell me
           what it is, when it&apos;s due, and roughly what it&apos;s worth, and I&apos;ll tell you
           honestly whether I can take it.
         </p>
         <p className="lede mt-4">
-          It isn&apos;t a help desk. General questions, free debugging and &ldquo;how do
-          I&hellip;&rdquo; belong in a GitHub issue, where the answer stays public and useful.
+          For general questions or a quick &ldquo;how do
+          I&hellip;&rdquo;, a GitHub issue is the better place — the answer stays up for anyone with the same problem.
         </p>
       </header>
 

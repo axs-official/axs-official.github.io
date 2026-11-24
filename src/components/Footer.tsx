@@ -9,8 +9,7 @@ export function Footer() {
         <div>
           <p className="text-[15px] font-semibold tracking-[-0.02em]">axs</p>
           <p className="mt-3 max-w-[32ch] text-[13.5px] leading-relaxed text-muted">
-            Privacy-first tools and automations, built in Algeria. No analytics, no cookies, no
-            trackers.
+            Small, privacy-first tools and automation. No analytics, no cookies, no trackers.
           </p>
           <EmailLink className="link mt-5 text-[13px]" />
         </div>

@@ -236,6 +236,78 @@ p {
   color: var(--ink);
 }
 
+/* tool marquee chips — brand colour lives on the icon only */
+
+.tool-chip {
+  --brand: #d4d4d4;
+  animation: tool-wave 5.6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.26s);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.45rem 0.95rem 0.45rem 0.7rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.3s ease,
+    transform 0.35s var(--ease);
+}
+
+.tool-chip__icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--brand);
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--brand) 40%, transparent));
+  transition: transform 0.45s var(--ease), filter 0.3s ease;
+  animation: tool-breathe 5.5s ease-in-out infinite;
+  animation-delay: inherit;
+}
+
+.tool-chip:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--brand) 55%, var(--line));
+  background: color-mix(in srgb, var(--brand) 10%, rgba(255, 255, 255, 0.03));
+  color: var(--ink);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--brand) 16%, transparent),
+    0 12px 30px -18px color-mix(in srgb, var(--brand) 85%, transparent);
+}
+
+.tool-chip:hover .tool-chip__icon {
+  transform: scale(1.14) rotate(-6deg);
+  filter: drop-shadow(0 0 9px color-mix(in srgb, var(--brand) 80%, transparent));
+}
+
+@keyframes tool-breathe {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* a slow wave runs through the row, so it feels alive between scroll steps */
+@keyframes tool-wave {
+  0%,
+  100% {
+    translate: 0 0.5px;
+    rotate: -0.5deg;
+  }
+  50% {
+    translate: 0 -2px;
+    rotate: 0.5deg;
+  }
+}
+
 /* surfaces */
 
 .card {
@@ -414,18 +486,24 @@ textarea.field {
 .marquee__track {
   display: flex;
   width: max-content;
-  gap: 0.6rem;
-  animation: marquee 38s linear infinite;
+  gap: 0.7rem;
+  animation: marquee 46s linear infinite;
+  will-change: transform;
+}
+
+.marquee__track > .tool-chip:nth-child(2n + 1) .tool-chip__icon {
+  animation-delay: -1.7s;
+}
+
+.marquee__track > .tool-chip:nth-child(3n) .tool-chip__icon {
+  animation-delay: -3.4s;
 }
 
 .marquee--reverse .marquee__track {
   animation-direction: reverse;
-  animation-duration: 46s;
+  animation-duration: 54s;
 }
 
-.marquee:hover .marquee__track {
-  animation-play-state: paused;
-}
 
 @keyframes marquee {
   to { transform: translateX(-50%); }
@@ -454,5 +532,26 @@ textarea.field {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* The tools strip is decorative and pauses on hover, so it keeps a slow
+     drift instead of freezing into a still image. */
+  .marquee__track {
+    animation-duration: 60s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .marquee--reverse .marquee__track {
+    animation-duration: 70s !important;
+  }
+
+  .tool-chip {
+    animation-duration: 8s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .tool-chip__icon {
+    animation-duration: 9s !important;
+    animation-iteration-count: infinite !important;
   }
 }

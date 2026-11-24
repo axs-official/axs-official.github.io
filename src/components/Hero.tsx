@@ -288,12 +288,12 @@ export function Hero() {
             transition={{ duration: 0.7 }}
             className="mt-7 max-w-[30ch] text-[clamp(1.15rem,2.6vw,1.6rem)] font-medium leading-[1.35] tracking-[-0.02em]"
           >
-            I build tools that don&apos;t watch you.
+            I build software with privacy and quality built in.
           </motion.p>
 
           <motion.p variants={rise} transition={{ duration: 0.7 }} className="lede mt-5 max-w-[46ch]">
-            Privacy-first software and automations, made because the closed version was paid,
-            locked down, or quietly collecting data. Arabic and English, from Algeria.
+            I build privacy-first software and small automations, usually because the paid
+            version was locked down or the free one was quietly collecting data.
           </motion.p>
 
           <motion.div variants={rise} transition={{ duration: 0.7 }} className="mt-9 flex flex-wrap items-center gap-3">
@@ -314,8 +314,8 @@ export function Hero() {
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--live)] shadow-[0_0_9px_rgba(74,222,128,0.75)]" />
               {site.availability}
             </span>
-            <span>{site.location}</span>
-            <span>{site.timezone}</span>
+
+
           </motion.div>
         </motion.div>
       </div>

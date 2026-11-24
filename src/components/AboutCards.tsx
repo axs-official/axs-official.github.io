@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ContributionMap } from "./ContributionMap";
-import { focus, principles, site } from "@/data/site";
+import { focus, principles } from "@/data/site";
 
 const facts = [
-  { label: "Where", value: `${site.location} · ${site.timezone}` },
-  { label: "Languages", value: site.languages },
-  { label: "Doing", value: "Privacy-first tools" },
-  { label: "Status", value: site.availability },
+  { label: "Focus", value: "Privacy-first software" },
+  { label: "Also", value: "Automation and small utilities" },
+  { label: "Status", value: "Open to paid work" },
+  { label: "Code", value: "github.com/axs-official" },
 ];
 
 export function AboutCards() {
@@ -45,7 +45,7 @@ export function AboutCards() {
         <div>
           <p className="eyebrow">How I work</p>
           <p className="mt-5 text-sm leading-relaxed text-muted">
-            Three rules I don&apos;t bend. Everything I publish gets held to them, this site
+            A few rules I keep to. Everything I publish is held to them, this site
             included — it ships without analytics, cookies or third-party scripts.
           </p>
           <Link href="/contact" className="link mt-6 text-[13px]">

@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 export const metadata = {
   title: "About",
   description:
-    "axs is a privacy-focused developer in Algeria. I build tools and automations that don't collect data.",
+    "axs builds privacy-first software and small automations — tools that stay useful without collecting your data.",
 };
 
 export default function AboutPage() {
@@ -17,19 +17,19 @@ export default function AboutPage() {
           I&apos;m axs.
         </h1>
         <p className="lede mt-6">
-          A developer in Algeria. I build software for problems I&apos;ve run into myself, or that
-          frustrated me because the closed version was paid, locked down, or quietly collecting
-          data.
+          I build small, focused software with privacy and quality at the center. Most of it
+          starts with a problem I&apos;ve run into myself, or a tool that was closed, overpriced,
+          or quietly collecting data.
         </p>
         <p className="lede mt-4">
-          {site.mission} Privacy, security and quality are the parts I don&apos;t trade away: no
-          analytics, no cookies, no trackers, no accounts you didn&apos;t ask for. Next stretch is
-          data analysis, where the same rules apply.
+          {site.mission} Privacy isn&apos;t a setting I add later: no analytics, no cookies, no
+          trackers, and no accounts nobody asked for.
+
         </p>
         <p className="lede mt-4">
-          I write code, not claims. There are no client logos or invented numbers on this site —
-          only figures pulled from my own GitHub activity, and I&apos;ll show where they came from
-          if you ask.
+          I&apos;d rather show code than make claims. There are no client logos or invented numbers here —
+          the only figures come from my own GitHub activity, and I&apos;m happy to explain where
+          they came from.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/work" className="btn btn--solid">

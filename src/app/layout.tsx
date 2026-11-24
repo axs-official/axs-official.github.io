@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     "axs",
     "privacy-first developer",
     "automation",
-    "Algeria",
     "Next.js",
     "Python",
     "open source",

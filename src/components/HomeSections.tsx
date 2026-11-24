@@ -1,7 +1,9 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ContributionMap } from "./ContributionMap";
 import { EmailLink } from "./EmailLink";
 import { builds, focus, signal, site, tools } from "@/data/site";
+import { toolIcons } from "@/data/toolIcons";
 
 export function AboutSection() {
   return (
@@ -10,9 +12,9 @@ export function AboutSection() {
         <div>
           <p className="eyebrow">About</p>
           <h2 className="h2 mt-5">
-            Closed tools annoyed me
+            I&apos;d rather build it
             <br />
-            into building my own.
+            than settle for closed.
           </h2>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/about" className="link">
@@ -23,14 +25,14 @@ export function AboutSection() {
 
         <div className="space-y-5">
           <p className="text-[1.05rem] leading-[1.75] text-ink/90">
-            I&apos;m axs. I build software for problems I&apos;ve hit myself, or that annoyed me
-            because the only version was closed and paid. Most of it starts as a script on my own
-            desk, then turns into something worth keeping.
+            I&apos;m axs, a developer who builds small, practical software. Most of it starts as a
+            script on my own machine — something I needed and couldn&apos;t find a good version of —
+            then grows into a tool worth keeping.
           </p>
           <p className="lede">
-            Privacy decides the shape of it: no analytics, no cookies, no trackers, no accounts you
-            didn&apos;t ask for. I&apos;m also working toward data analysis, where those habits
-            matter just as much.
+            Privacy shapes how it&apos;s built: no analytics, no cookies, no trackers, and no
+            accounts nobody asked for. I care just as much about the result feeling clear, quick
+            and easy to hand over.
           </p>
 
           <div className="grid gap-px overflow-hidden border border-[var(--line)] sm:grid-cols-3">
@@ -50,16 +52,36 @@ export function AboutSection() {
 
 function Row({ items, reverse, offset = 0 }: { items: string[]; reverse?: boolean; offset?: number }) {
   const list = [...items.slice(offset), ...items.slice(0, offset)];
-  const doubled = [...list, ...list];
   return (
     <div className={`marquee ${reverse ? "marquee--reverse" : ""}`}>
       <div className="marquee__track">
-        {doubled.map((tool, index) => (
-          <span key={`${tool}-${index}`} className="chip shrink-0">
-            <span className="h-1 w-1 rounded-full bg-accent" />
-            {tool}
-          </span>
-        ))}
+        {[0, 1].map((copy) =>
+          list.map((tool, index) => {
+            const icon = toolIcons[tool];
+            return (
+              <span
+                key={`${tool}-${copy}`}
+                className="tool-chip shrink-0"
+                style={
+                  { "--brand": icon?.hex ?? "#d4d4d4", "--i": index } as CSSProperties
+                }
+                aria-hidden={copy === 1 || undefined}
+              >
+                {icon ? (
+                  <svg
+                    className="tool-chip__icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                    focusable="false"
+                  >
+                    <path d={icon.path} fill="currentColor" />
+                  </svg>
+                ) : null}
+                {tool}
+              </span>
+            );
+          }),
+        )}
       </div>
     </div>
   );
@@ -85,10 +107,10 @@ export function SignalSection() {
       <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
         <div>
           <p className="eyebrow">On GitHub</p>
-          <h2 className="h2 mt-5">What I&apos;ve been pushing</h2>
+          <h2 className="h2 mt-5">What I&apos;ve been building</h2>
         </div>
         <p className="max-w-[30ch] text-sm leading-relaxed text-muted">
-          Straight from my contribution graph, last synced {signal.synced}.
+          Pulled from my own GitHub activity, last synced {signal.synced}.
         </p>
       </div>
       <ContributionMap />
@@ -155,14 +177,14 @@ export function ContactSection() {
         <div>
           <p className="eyebrow">Contact</p>
           <h2 className="h2 mt-5">
-            Paid work.
+            Have something
             <br />
-            Email is easiest.
+            that needs building?
           </h2>
           <p className="lede mt-4 max-w-[46ch]">
-            Business enquiries only: what the job is, when it&apos;s due, and roughly what
-            it&apos;s worth. General questions are better as GitHub issues, where the answer stays
-            useful to someone else.
+            I take on paid work: building, fixing, or automating something that&apos;s slowing you
+            down. Tell me what it is, when it&apos;s due, and roughly what it&apos;s worth — I&apos;ll
+            be straight about whether I can help. General questions are better as GitHub issues.
           </p>
           <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
             Send it from the contact page · nothing is stored

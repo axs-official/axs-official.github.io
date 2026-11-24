@@ -45,8 +45,8 @@ export function ContactCard() {
         <div>
           <p className="eyebrow">What I can help with</p>
           <p className="mt-5 text-sm leading-relaxed text-muted">
-            I&apos;m one person, so I keep the scope tight: a clear job, done properly, with the
-            code handed over. No retainer, no lock-in, and nothing of yours leaves your machine.
+            I work on my own, so I keep the scope clear: one job, done properly, with the code
+            handed over at the end. No retainers, no lock-in, and your data stays with you.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-muted">
             Not paid work? Open an issue on GitHub instead. I answer those in public, so the next
@@ -66,7 +66,7 @@ export function ContactCard() {
       </div>
 
       <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
-        {site.location} · {site.timezone} · {site.availability}
+        {site.availability} · Remote work
       </p>
       <p className="max-w-[64ch] text-[12.5px] leading-relaxed text-dim">
         No analytics, no cookies, no trackers on this page. The address is written out so you can

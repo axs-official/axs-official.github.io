@@ -48,15 +48,15 @@ const faq = [
   },
   {
     q: "Do you work in Arabic?",
-    a: "Arabic and English, written and spoken. The site itself is in English.",
+    a: "Yes — Arabic and English, written and spoken. The site itself is in English.",
   },
   {
     q: "Where are you based?",
     a: "Algeria, UTC+1. I work remotely, and I keep the address at country level on purpose.",
   },
   {
-    q: "Is this site watching me?",
-    a: "No. No analytics, no cookies, no third-party scripts or fonts. The message box only opens your own email app, so nothing is posted to a server.",
+    q: "Does this site track me?",
+    a: "No. There are no analytics, cookies, third-party scripts or external fonts. The message box only opens your own email app, so nothing is posted to a server.",
   },
 ];
 
@@ -74,14 +74,12 @@ export function LinksPage() {
 
         <h1 className="mt-6 text-[26px] font-semibold tracking-[-0.035em]">{site.name}</h1>
         <p className="mt-2 max-w-[34ch] text-[14px] leading-relaxed text-muted">
-          Privacy-first developer in Algeria. Arabic and English. I build software that leaves you
-          alone.
+          I build privacy-first software and small automations — useful tools, no tracking, no
+          noise.
         </p>
         <p className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--live)] shadow-[0_0_9px_rgba(74,222,128,0.75)]" />
           {site.availability}
-          <span className="text-[var(--line-strong)]">/</span>
-          {site.timezone}
         </p>
       </div>
 
