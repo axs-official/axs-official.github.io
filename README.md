@@ -3,7 +3,7 @@
 Source for **[axs-official.github.io](https://axs-official.github.io)** and its
 [links page](https://axs-official.github.io/links).
 
-A small portfolio: Next.js App Router, exported to static HTML, served by GitHub Pages. Nothing on
+A portfolio: Next.js App Router, exported to static HTML, served by GitHub Pages. Nothing on
 the page talks to a third party — no analytics, no cookies, no CDN, no remote fonts.
 
 ## Routes

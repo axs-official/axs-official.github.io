@@ -280,7 +280,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="mt-5 text-[clamp(3.4rem,11vw,7rem)] font-bold leading-[0.9] tracking-[-0.055em]"
           >
-            <span className="grad-text">axs</span>
+            <span className="grad-text">A-XS</span>
           </motion.h1>
 
           <motion.p
@@ -288,12 +288,13 @@ export function Hero() {
             transition={{ duration: 0.7 }}
             className="mt-7 max-w-[30ch] text-[clamp(1.15rem,2.6vw,1.6rem)] font-medium leading-[1.35] tracking-[-0.02em]"
           >
-            I build software with privacy and quality built in.
+            Full-stack developer building privacy-first software.
           </motion.p>
 
           <motion.p variants={rise} transition={{ duration: 0.7 }} className="lede mt-5 max-w-[46ch]">
-            I build privacy-first software and small automations, usually because the paid
-            version was locked down or the free one was quietly collecting data.
+            I take a project end to end — interface, server, database, deploy — and keep the
+            tracking out of it. Usually because the tool I needed was closed, overpriced, or
+            quietly collecting data.
           </motion.p>
 
           <motion.div variants={rise} transition={{ duration: 0.7 }} className="mt-9 flex flex-wrap items-center gap-3">

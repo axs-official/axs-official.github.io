@@ -1,10 +1,12 @@
 import { ContactForm } from "./ContactForm";
 import { EmailLink } from "./EmailLink";
-import { site } from "@/data/site";
+import { site, socials } from "@/data/site";
+import { socialIcons } from "@/data/socialIcons";
 
 const help = [
-  "Automation scripts and internal tools",
+  "Full-stack web apps, from the database to the interface",
   "A site or a dashboard that isn't a template",
+  "Automation scripts and internal tools",
   "Cleaning up or fixing an existing front end",
   "AI-assisted workflows, local or over an API",
 ];
@@ -38,6 +40,32 @@ export function ContactCard() {
               Public repos, the profile cards, and the code for this site.
             </p>
           </a>
+          <div className="card block p-5">
+            <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-dim">Elsewhere</p>
+            <ul className="mt-3 space-y-2.5">
+              {socials.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2.5 text-[13.5px] text-muted transition-colors hover:text-ink"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 shrink-0" aria-hidden>
+                      <path d={socialIcons[social.label]} fill="currentColor" />
+                    </svg>
+                    <span>{social.label}</span>
+                    <span className="ml-auto font-mono text-[10px] tracking-[0.08em] text-dim">
+                      {social.handle}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-[12.5px] leading-relaxed text-muted">
+              General messages are fine here. Work enquiries go to the email above.
+            </p>
+          </div>
         </div>
       </div>
 

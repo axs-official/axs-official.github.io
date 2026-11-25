@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { EmailLink } from "./EmailLink";
-import { navLinks, site } from "@/data/site";
+import { navLinks, site, socials } from "@/data/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-[var(--line)]">
       <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="text-[15px] font-semibold tracking-[-0.02em]">axs</p>
-          <p className="mt-3 max-w-[32ch] text-[13.5px] leading-relaxed text-muted">
-            Small, privacy-first tools and automation. No analytics, no cookies, no trackers.
+          <p className="text-[15px] font-semibold tracking-[-0.02em]">{site.name}</p>
+          <p className="mt-3 max-w-[34ch] text-[13.5px] leading-relaxed text-muted">
+            Full-stack developer. Privacy-first web apps, automation and developer tools — no
+            analytics, no cookies, no trackers.
           </p>
           <EmailLink className="link mt-5 text-[13px]" />
         </div>
@@ -50,12 +51,24 @@ export function Footer() {
                 Site source ↗
               </a>
             </li>
+            {socials.map((social) => (
+              <li key={social.label}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[13.5px] text-muted transition hover:text-ink"
+                >
+                  {social.label} ↗
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       <div className="shell flex flex-col gap-2 border-t border-[var(--line)] py-5 font-mono text-[10px] uppercase tracking-[0.16em] text-dim sm:flex-row sm:items-center sm:justify-between">
-        <p>© {site.year} axs</p>
+        <p>© {site.year} {site.name}</p>
         <p>No analytics · No cookies · Next.js on GitHub Pages</p>
       </div>
     </footer>

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ContributionMap } from "./ContributionMap";
+import { SocialLinks } from "./SocialLinks";
 import { focus, principles } from "@/data/site";
 
 const facts = [
+  { label: "Role", value: "Full-stack developer" },
   { label: "Focus", value: "Privacy-first software" },
-  { label: "Also", value: "Automation and small utilities" },
   { label: "Status", value: "Open to paid work" },
   { label: "Code", value: "github.com/axs-official" },
 ];
@@ -45,12 +46,13 @@ export function AboutCards() {
         <div>
           <p className="eyebrow">How I work</p>
           <p className="mt-5 text-sm leading-relaxed text-muted">
-            A few rules I keep to. Everything I publish is held to them, this site
-            included — it ships without analytics, cookies or third-party scripts.
+            A few rules I keep to. Everything I publish is held to them, this site included — it
+            ships without analytics, cookies or third-party scripts.
           </p>
           <Link href="/contact" className="link mt-6 text-[13px]">
             Talk about paid work <span aria-hidden>→</span>
           </Link>
+          <SocialLinks className="mt-6" />
         </div>
         <ol className="space-y-px overflow-hidden border-y border-[var(--line)]">
           {principles.map((item, index) => (

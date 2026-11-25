@@ -1,9 +1,10 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 import { ContributionMap } from "./ContributionMap";
 import { EmailLink } from "./EmailLink";
+import { SocialLinks } from "./SocialLinks";
 import { builds, focus, signal, site, tools } from "@/data/site";
 import { toolIcons } from "@/data/toolIcons";
+import type { CSSProperties } from "react";
 
 export function AboutSection() {
   return (
@@ -12,9 +13,9 @@ export function AboutSection() {
         <div>
           <p className="eyebrow">About</p>
           <h2 className="h2 mt-5">
-            I&apos;d rather build it
+            I build the whole thing,
             <br />
-            than settle for closed.
+            not a slice of it.
           </h2>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/about" className="link">
@@ -25,14 +26,14 @@ export function AboutSection() {
 
         <div className="space-y-5">
           <p className="text-[1.05rem] leading-[1.75] text-ink/90">
-            I&apos;m axs, a developer who builds small, practical software. Most of it starts as a
-            script on my own machine — something I needed and couldn&apos;t find a good version of —
-            then grows into a tool worth keeping.
+            I&apos;m A-XS. I work across the stack — React and Next.js on the front, Node or Python
+            behind it, the database and the deploy included — and most of what I build starts as
+            something I needed myself.
           </p>
           <p className="lede">
-            Privacy shapes how it&apos;s built: no analytics, no cookies, no trackers, and no
-            accounts nobody asked for. I care just as much about the result feeling clear, quick
-            and easy to hand over.
+            Privacy shapes how it gets built: no analytics, no cookies, no trackers, and no
+            accounts nobody asked for. The rest is doing the job well — fast pages, clear code,
+            nothing left half-finished.
           </p>
 
           <div className="grid gap-px overflow-hidden border border-[var(--line)] sm:grid-cols-3">
@@ -200,6 +201,7 @@ export function ContactSection() {
           >
             github.com/axs-official ↗
           </a>
+          <SocialLinks className="mt-1 sm:basis-full lg:mt-2" />
         </div>
       </div>
     </section>

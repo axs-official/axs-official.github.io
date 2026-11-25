@@ -3,7 +3,7 @@ import { WorkCards } from "@/components/WorkCards";
 export const metadata = {
   title: "Work",
   description:
-    "Things axs has built: this portfolio, the animated GitHub profile cards, and private automation work.",
+    "Things A-XS has built: this portfolio, the animated GitHub profile cards, and private full-stack work.",
 };
 
 export default function WorkPage() {
@@ -15,8 +15,8 @@ export default function WorkPage() {
           Things I&apos;ve built.
         </h1>
         <p className="lede mt-6">
-          A short list, deliberately. Two projects are public; the rest is still private. If you
-          want to see how I work, ask and I&apos;ll send you the code.
+          Two projects are public; the rest is still private. If you want to see how I work, ask
+          and I&apos;ll send you the code.
         </p>
       </header>
 

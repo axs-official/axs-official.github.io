@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "axs",
+    "name": "A-XS",
     "email": "axs.contact.me@gmail.com",
     "url": "https://github.com/axs-official"
   },
-  "description": "axs — privacy-first developer. Source for axs-official.github.io.",
+  "description": "A-XS — full-stack developer. Source for axs-official.github.io.",
   "keywords": [
     "reactjs",
     "nextjs",

@@ -3,7 +3,7 @@ import { StackList } from "@/components/StackList";
 export const metadata = {
   title: "Stack",
   description:
-    "What axs builds with: TypeScript, React, Next.js, Python, GitHub Actions, Tailwind and a bit of Rust.",
+    "What A-XS builds with: TypeScript, React, Next.js, Node, Python, SQLite, GitHub Actions and a bit of Rust.",
 };
 
 export default function StackPage() {

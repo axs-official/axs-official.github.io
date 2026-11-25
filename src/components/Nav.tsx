@@ -31,10 +31,10 @@ export function Nav() {
       }`}
     >
       <nav className="shell flex h-[68px] items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-2.5" aria-label="axs home">
-          <span className="text-[15px] font-semibold tracking-[-0.02em]">axs</span>
+        <Link href="/" className="flex items-baseline gap-2.5" aria-label={`${site.name} home`}>
+          <span className="text-[15px] font-semibold tracking-[-0.02em]">{site.name}</span>
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-dim sm:block">
-            developer
+            full-stack
           </span>
         </Link>
 

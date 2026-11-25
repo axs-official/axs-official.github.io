@@ -3,7 +3,7 @@ import { ContactCard } from "@/components/ContactCard";
 export const metadata = {
   title: "Contact",
   description:
-    "Email axs about paid work or a business enquiry. The message box opens your own mail app. No analytics, no data collection.",
+    "Email A-XS about paid work or a business enquiry. The message box opens your own mail app. No analytics, no data collection.",
 };
 
 export default function ContactPage() {
@@ -15,9 +15,9 @@ export default function ContactPage() {
           For paid work.
         </h1>
         <p className="lede mt-6">
-          I use this address for paid work: something you need built, fixed, or automated. Tell me
-          what it is, when it&apos;s due, and roughly what it&apos;s worth, and I&apos;ll tell you
-          honestly whether I can take it.
+          I use this address for paid work: something you need built, fixed, or automated. I build
+          the whole stack, so tell me what it is, when it&apos;s due, and roughly what it&apos;s
+          worth — I&apos;ll tell you honestly whether I can take it.
         </p>
         <p className="lede mt-4">
           For general questions or a quick &ldquo;how do
